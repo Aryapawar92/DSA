@@ -85,12 +85,97 @@ void explainStack(){
     cout << s.size() << endl;
 
     cout << "empty or Not" << s.empty() << endl;
-    
+
 
 
 }
 
+void explainQueue(){
 
+    //FIFO
+
+    queue<int> q;
+
+    q.push(1);
+    q.push(2);
+    q.push(3);
+
+    cout << "First Element -> "<< q.front() << endl;
+
+    q.pop();
+
+    q.size();   
+
+
+
+}
+
+void explainPriorityQueue(){
+    
+    // where the first element has the highest priority queue
+
+    //max heap
+    priority_queue<int> pq;
+
+    //min heap
+    priority_queue<int , vector<int> , greater<int>> mini;
+
+    pq.push(1);
+    pq.push(2); 
+    pq.push(3); 
+
+    for(int i = 0 ; i < pq.size();i++){
+        cout << i << " ";
+    }
+
+    cout << "check: " << pq.empty() << endl;
+
+
+}
+
+void explainSet(){
+    // BTS - BST - Binary Search Tree
+
+    set<int> s;
+
+    s.insert(1);
+    s.insert(2);
+    s.insert(3);
+    s.insert(1);
+
+    for(int i : s){
+        cout << i << " ";
+    }
+
+    cout << "check: " << s.count(1) << endl;
+
+    set<int>::iterator it = s.find(1);
+
+}
+
+void explainMap(){
+
+    // key-value pair
+    //same key dont point to same value
+
+    map<int,string> m;
+
+    m[1] = "arya";
+    m[2] = "arya1";
+    m[3] = "arya2";
+
+    m.insert({4,"arya4"}); 
+
+    for(auto i : m){
+        cout << i.first<< " " << i.second << endl;
+    }
+
+    
+
+    map<int,string> copy = m;
+
+
+}
 
 void explainPair(){
 
@@ -109,6 +194,8 @@ void explainPair(){
 }
 
 void explainVector(){
+
+
 
     //increases it size dynamically like if the size was 2 then it goes to 4 etc
 
@@ -143,6 +230,15 @@ void explainVector(){
 
     vector<int> v2(v);  //copy of v
 
+}
+
+void explainAlgorithm(){
+    //sort
+
+    vector<int> v = {1,2,3,4,5};
+
+    cout << "finding 3 in vector"<< binary_search(v.begin(),v.end(),3) << endl;    
+    
 }
 
 int main(){
